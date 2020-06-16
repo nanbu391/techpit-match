@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-end
+
+   mount_uploader :img_name, ImgNameUploader
+
+   enum sex: { 男: 0, 女: 1 }
+ end
+
